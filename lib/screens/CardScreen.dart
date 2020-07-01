@@ -115,7 +115,7 @@ class _CardScreenState extends State<CardScreen> {
                               borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                               image: 
                                 DecorationImage(
-                                  fit: BoxFit.fill,
+                                  fit: BoxFit.fitWidth,
                                   image: this.loaded ? imgNet : imgPlaceHolder,
                                 )
                               )
