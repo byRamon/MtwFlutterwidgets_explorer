@@ -37,7 +37,9 @@ class WidgetScreen extends StatelessWidget {
                           ),
                           title: Text('Action Sheets and alerts'),
                           trailing: Icon(CupertinoIcons.right_chevron),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pushNamed(context, '/actionsheet');
+                          },
                         ),
                         Container(
                           height: 1,
@@ -55,7 +57,9 @@ class WidgetScreen extends StatelessWidget {
                           ),
                           title: Text('Text inputs'),
                           trailing: Icon(CupertinoIcons.right_chevron),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pushNamed(context, '/textinputs');
+                          },
                         ),
                         
                         Container(
@@ -74,7 +78,9 @@ class WidgetScreen extends StatelessWidget {
                           ),
                           title: Text('Switch and slider'),
                           trailing: Icon(CupertinoIcons.right_chevron),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pushNamed(context, '/switchandslider');
+                          },
                         ),
                         Container(
                           height: 1,
@@ -92,7 +98,9 @@ class WidgetScreen extends StatelessWidget {
                           ),
                           title: Text('Segmented Control'),
                           trailing: Icon(CupertinoIcons.right_chevron),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pushNamed(context, '/segmentcontrol');
+                          },
                         ),
                         Container(
                           height: 1,
@@ -110,7 +118,9 @@ class WidgetScreen extends StatelessWidget {
                           ),
                           title: Text('Pickers'),
                           trailing: Icon(CupertinoIcons.right_chevron),
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.pushNamed(context, '/switchandslider');
+                          },
                         ),
                       ],
                     ),

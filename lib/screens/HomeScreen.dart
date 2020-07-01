@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'WidgetsScreen.dart';
 import 'AnimationScreen.dart';
 import 'CardScreen.dart';
+import 'package:widgets_explorer/src/routes/routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key key}) : super (key : key);
@@ -17,6 +18,7 @@ class HomeScreen extends StatelessWidget {
       ), 
       tabBuilder: (context, index){
         return CupertinoTabView(
+          routes: getApplicationRoutes(),
           builder: (context){
             switch(index){
               case 0: 
@@ -29,6 +31,7 @@ class HomeScreen extends StatelessWidget {
                 return CardScreen();
                 break;
             }
+            return WidgetScreen();
           },
         );
       },
