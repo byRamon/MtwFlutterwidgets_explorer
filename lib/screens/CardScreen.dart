@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class CardScreen extends StatefulWidget {
   CardScreen({Key key}) : super(key: key);
@@ -11,7 +12,7 @@ class _CardScreenState extends State<CardScreen> {
   var imgPlaceHolder = new AssetImage(
       'assets/cupertino_activity_indicator.gif');
   var imgNet = new NetworkImage(
-      "https://az837918.vo.msecnd.net/publishedimages/Listings/1654/es-MX/images/1/park-lake-campground-L-17.jpg");
+      "https://s1.1zoom.me/big0/870/USA_Parks_Lake_Houses_Fountains_Echo_Park_Lake_Los_566739_1280x854.jpg");
   bool loaded = true;
   
   @override
@@ -25,8 +26,7 @@ class _CardScreenState extends State<CardScreen> {
   }     
   
   @override
-  Widget build(BuildContext context) {
-    
+  Widget build(BuildContext context) { 
     return CupertinoPageScaffold(
         backgroundColor: CupertinoColors.systemBackground,
         child: CustomScrollView(slivers: <Widget>[
@@ -35,6 +35,84 @@ class _CardScreenState extends State<CardScreen> {
           ),
           SliverList(
               delegate: SliverChildListDelegate([
+                _cardTipo1(),
+                _cardTipo2(context),
+                _cardTipo1(),
+                _cardTipo2(context),
+                _cardTipo1(),
+                _cardTipo2(context),
+                _cardTipo1(),
+                _cardTipo2(context),
+              ])
+          )
+        ])
+    );
+  }
+
+  Widget _cardTipo1() {
+    return Card(
+      margin: EdgeInsets.all(20),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      elevation: 15,
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            leading: Icon(CupertinoIcons.photo_camera),
+            title: Text('im card title'),
+            subtitle: Text('this is the subtitle of the card, this is the subtitle of the card, this is the subtitle of the card, this is the subtitle of the card, '),
+          )
+        ],
+      ),
+    );
+  }
+  Widget _cardTipo2(BuildContext context) {
+    final _card  = Stack(
+      alignment: Alignment.bottomCenter,
+      children : <Widget>[
+        FadeInImage(
+          placeholder: imgPlaceHolder, 
+          image: imgNet,
+          fit: BoxFit.cover,
+          fadeInDuration: Duration(milliseconds: 200),
+        ),
+        Opacity(
+          opacity: .7,
+          child: Container(
+          width: double.infinity,
+          height: 80,
+          color: CupertinoColors.black,
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text('2020-07-04', style: TextStyle(color: CupertinoColors.white),),
+              Text('Park Lake', style: TextStyle(color: CupertinoColors.white, fontSize: 25),),
+              ],
+            ),
+          ),
+        ),
+      ]
+    );
+
+    return Container(
+      //height: 150,
+      margin: EdgeInsets.symmetric(horizontal: 17, vertical: 5),
+      decoration: BoxDecoration(
+        color: CupertinoColors.white,
+        borderRadius: BorderRadius.circular(15),
+        boxShadow: [
+          BoxShadow(color: CupertinoColors.systemGrey.withOpacity(.9), offset: Offset(5,5), blurRadius: 8),
+          BoxShadow(color: CupertinoColors.systemGrey.withOpacity(1), offset: Offset(3,3), blurRadius: 8)
+        ]
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: _card
+      ),
+    );
+  }
+}
+                /*
             Container(
                 margin: EdgeInsets.all(15),
                 decoration: BoxDecoration(
@@ -133,3 +211,4 @@ class _CardScreenState extends State<CardScreen> {
         ]));
   }
 }
+*/
