@@ -119,7 +119,7 @@ class WidgetScreen extends StatelessWidget {
                           title: Text('Pickers'),
                           trailing: Icon(CupertinoIcons.right_chevron),
                           onTap: (){
-                            Navigator.pushNamed(context, '/switchandslider');
+                            Navigator.pushNamed(context, '/pickers');
                           },
                         ),
                       ],
